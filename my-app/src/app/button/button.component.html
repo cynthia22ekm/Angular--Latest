@@ -1,6 +1,10 @@
 <button
+  id="btn"
   [type]="btnType"
-  [style.color]="btnColor"
+  [ngClass]="[
+    btnSize == 'small' ? 'small' : 'large',
+    btnType == 'submit' ? 'submit' : btnType == 'primary' ? 'primary' : 'normal'
+  ]"
 >
-  {{ text }}
+  {{ btnText }}
 </button>

@@ -1,8 +1,10 @@
 import { Input, Component, OnInit } from '@angular/core';
 
+type variant = 'primary' | 'submit' | 'normal';
 export type ButtonProps = {
-  btnType: string;
-  btnColor: string;
+  btnType: variant;
+  btnSize: string;
+  btnText: string;
 };
 
 @Component({
@@ -11,12 +13,16 @@ export type ButtonProps = {
   styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent implements OnInit, ButtonProps {
-  @Input() btnColor: string = '';
+  @Input() btnType: variant = 'normal';
 
-  @Input() btnType: string = '';
+  @Input() btnSize: string = '';
 
-  @Input()
-  text: string = 'Hi';
+  @Input() btnText: string = '';
+
+  getbtnSize() {
+    return;
+    this.btnSize;
+  }
 
   constructor() {}
 
