@@ -1,1 +1,8 @@
-<app-button btnType="primary" btnSize="small" btnText="Save"></app-button>
+<app-button
+  btnType="primary"
+  btnSize="small"
+  btnText="Save"
+  svgIcon="banana"
+  *ngIf="show"
+  (click)="btnClickHanlder()"
+></app-button>

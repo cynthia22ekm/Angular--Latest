@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,19 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'my-app';
-  btnType: string = 'submit';
-  btnColor: string = 'red';
+  show: boolean = true;
+
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      'banana',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/imgs/banana.svg')
+    );
+  }
+
+  btnClickHanlder() {
+    console.log('Button clicked');
+  }
 }
