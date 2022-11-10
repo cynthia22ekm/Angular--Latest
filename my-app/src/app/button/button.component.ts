@@ -5,6 +5,7 @@ export type ButtonProps = {
   btnType: variant;
   btnSize: string;
   btnText: string;
+  svgIcon: string;
 };
 
 @Component({
@@ -18,6 +19,8 @@ export class ButtonComponent implements OnInit, ButtonProps {
   @Input() btnSize: string = '';
 
   @Input() btnText: string = '';
+
+  @Input() svgIcon: string = '';
 
   getbtnSize() {
     return;
