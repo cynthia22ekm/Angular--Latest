@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -12,7 +12,12 @@ export type IconComponentProps = {
   styleUrls: ['./icon.component.css'],
 })
 export class IconComponent implements OnInit, IconComponentProps {
+  @Output() iconClickEmitter = new EventEmitter<void>();
   @Input() iconLabel = '';
+
+  iconClickHandler() {
+    this.iconClickEmitter.emit();
+  }
 
   constructor(
     private matIconRegistry: MatIconRegistry,
@@ -29,6 +34,12 @@ export class IconComponent implements OnInit, IconComponentProps {
         'down-arrow',
         this.domSanitizer.bypassSecurityTrustResourceUrl(
           'assets/imgs/down-arrow.svg'
+        )
+      )
+      .addSvgIcon(
+        'cross',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/imgs/cross.svg'
         )
       );
   }
