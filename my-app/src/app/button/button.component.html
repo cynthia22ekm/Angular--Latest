@@ -7,5 +7,5 @@
   ]"
 >
   {{ btnText }}
-  <app-icon [Icon]="svgIcon"></app-icon>
+  <app-icon *ngIf="isIconPresent" [iconLabel]="iconLabel"></app-icon>
 </button>
