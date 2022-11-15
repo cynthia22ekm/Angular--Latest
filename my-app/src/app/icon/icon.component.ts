@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 export type IconComponentProps = {
-  Icon: string;
+  iconLabel: string;
 };
 
 @Component({
@@ -10,9 +12,26 @@ export type IconComponentProps = {
   styleUrls: ['./icon.component.css'],
 })
 export class IconComponent implements OnInit, IconComponentProps {
-  @Input() Icon = '';
+  @Input() iconLabel = '';
 
-  constructor() {}
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry
+      .addSvgIcon(
+        'banana',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/imgs/banana.svg'
+        )
+      )
+      .addSvgIcon(
+        'down-arrow',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/imgs/down-arrow.svg'
+        )
+      );
+  }
 
   ngOnInit(): void {}
 }
