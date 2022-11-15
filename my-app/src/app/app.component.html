@@ -1,7 +1,9 @@
 <app-button
-  btnType="normal"
+  btnType="primary"
   btnSize="small"
   btnText="Save"
+  btnWidth="100px"
+  btnHeight="30px"
   [isIconPresent]="true"
   iconLabel="banana"
   *ngIf="show"
@@ -16,3 +18,4 @@
   *ngIf="show"
   (buttonClickEmitter)="btnClickHanlder()"
 ></app-button>
+<app-text-input textWidth="200px" textHeight="30px"></app-text-input>

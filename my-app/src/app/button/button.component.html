@@ -10,6 +10,7 @@
       : 'normal',
     isIconPresent ? 'withIcon' : 'withoutIcon'
   ]"
+  [ngStyle]="{ width: btnWidth, height: btnHeight }"
   (click)="buttonClickHandler()"
 >
   {{ btnText }}

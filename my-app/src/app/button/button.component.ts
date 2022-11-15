@@ -5,6 +5,8 @@ export type ButtonProps = {
   btnType: variant;
   btnSize: string;
   btnText: string;
+  btnWidth: string;
+  btnHeight: string;
   iconLabel: string;
   isIconPresent: boolean;
 };
@@ -20,6 +22,9 @@ export class ButtonComponent implements OnInit, ButtonProps {
   @Input() btnSize: string = '';
 
   @Input() btnText: string = '';
+
+  @Input() btnWidth: string = '';
+  @Input() btnHeight: string = '';
 
   @Input() iconLabel: string = '';
 
