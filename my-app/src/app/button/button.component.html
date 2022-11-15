@@ -3,8 +3,14 @@
   [type]="btnType"
   [ngClass]="[
     btnSize == 'small' ? 'small' : 'large',
-    btnType == 'submit' ? 'submit' : btnType == 'primary' ? 'primary' : 'normal'
+    btnType == 'submit'
+      ? 'submit'
+      : btnType == 'primary'
+      ? 'primary'
+      : 'normal',
+    isIconPresent ? 'withIcon' : 'withoutIcon'
   ]"
+  (click)="buttonClickHandler()"
 >
   {{ btnText }}
   <app-icon *ngIf="isIconPresent" [iconLabel]="iconLabel"></app-icon>
