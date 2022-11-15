@@ -1,6 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Input, Output, Component, OnInit, EventEmitter } from '@angular/core';
 
 type variant = 'primary' | 'submit' | 'normal';
 export type ButtonProps = {
@@ -26,6 +24,12 @@ export class ButtonComponent implements OnInit, ButtonProps {
   @Input() iconLabel: string = '';
 
   @Input() isIconPresent: boolean = false;
+
+  @Output() buttonClickEmitter = new EventEmitter<void>();
+
+  buttonClickHandler() {
+    this.buttonClickEmitter.emit();
+  }
 
   getbtnSize() {
     return;
