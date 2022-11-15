@@ -2,6 +2,10 @@
   border-radius: 5px;
   font-size: 10px;
   color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
 }
 
 .small {
