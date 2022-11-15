@@ -2,10 +2,17 @@
   border-radius: 5px;
   font-size: 10px;
   color: black;
+  margin: 5px;
+}
+
+.withoutIcon {
+  text-align: center;
+}
+
+.withIcon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px;
 }
 
 .small {
@@ -18,5 +25,9 @@
 }
 
 .primary {
-  background-color: lightblue;
+  background-color: lightgrey;
+}
+
+.normal {
+  background-color: white;
 }
