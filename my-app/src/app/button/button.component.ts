@@ -1,11 +1,14 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 type variant = 'primary' | 'submit' | 'normal';
 export type ButtonProps = {
   btnType: variant;
   btnSize: string;
   btnText: string;
-  svgIcon: string;
+  iconLabel: string;
+  isIconPresent: boolean;
 };
 
 @Component({
@@ -20,7 +23,9 @@ export class ButtonComponent implements OnInit, ButtonProps {
 
   @Input() btnText: string = '';
 
-  @Input() svgIcon: string = '';
+  @Input() iconLabel: string = '';
+
+  @Input() isIconPresent: boolean = false;
 
   getbtnSize() {
     return;
