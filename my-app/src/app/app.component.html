@@ -1,9 +1,18 @@
 <app-button
-  btnType="primary"
+  btnType="normal"
   btnSize="small"
   btnText="Save"
   [isIconPresent]="true"
   iconLabel="banana"
   *ngIf="show"
-  (click)="btnClickHanlder()"
+  (buttonClickEmitter)="btnClickHanlder()"
+></app-button>
+
+<app-button
+  btnType="normal"
+  btnSize="small"
+  btnText="Save"
+  [isIconPresent]="false"
+  *ngIf="show"
+  (buttonClickEmitter)="btnClickHanlder()"
 ></app-button>
