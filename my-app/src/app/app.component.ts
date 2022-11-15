@@ -13,4 +13,8 @@ export class AppComponent {
   btnClickHanlder() {
     console.log('Button clicked');
   }
+
+  getInputText(inputText: string) {
+    console.log(inputText);
+  }
 }
