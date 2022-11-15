@@ -1,0 +1,14 @@
+div {
+  position: relative;
+  width: max-content;
+}
+
+app-icon {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+
+#textInput {
+  border-radius: 5px;
+}

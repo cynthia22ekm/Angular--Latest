@@ -1,0 +1,16 @@
+<div>
+  <input
+    id="textInput"
+    [ngStyle]="{
+      width: textWidth,
+      height: textHeight
+    }"
+    [(ngModel)]="enteredText"
+    (input)="textInputHandler($event)"
+  />
+  <app-icon
+    *ngIf="enteredText.length"
+    [iconLabel]="iconLabel"
+    (iconClickEmitter)="clearTextInputHandler()"
+  ></app-icon>
+</div>
