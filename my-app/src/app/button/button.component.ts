@@ -18,18 +18,12 @@ export type ButtonProps = {
 })
 export class ButtonComponent implements OnInit, ButtonProps {
   @Input() btnType: variant = 'normal';
-
   @Input() btnSize: string = '';
-
   @Input() btnText: string = '';
-
   @Input() btnWidth: string = '';
   @Input() btnHeight: string = '';
-
   @Input() iconLabel: string = '';
-
   @Input() isIconPresent: boolean = false;
-
   @Output() buttonClickEmitter = new EventEmitter<void>();
 
   buttonClickHandler() {
