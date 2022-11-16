@@ -1,0 +1,10 @@
+.ng-select.custom {
+  width: 200px;
+  border-radius: 5px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  border: 2px solid black;
+}

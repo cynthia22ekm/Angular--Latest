@@ -1,0 +1,11 @@
+<ng-select
+  class="custom"
+  bindLabel="name"
+  [items]="Products"
+  [(ngModel)]="selectedText"
+  [searchable]="true"
+  [clearable]="true"
+  [placeholder]="defaultPlaceholder"
+  (change)="dropDownSelectHandler($event)"
+>
+</ng-select>
