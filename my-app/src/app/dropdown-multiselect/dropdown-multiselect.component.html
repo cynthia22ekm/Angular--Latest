@@ -1,0 +1,8 @@
+<ng-multiselect-dropdown
+  placeholder="Select Product..."
+  [settings]="dropdownSettings"
+  [data]="Products"
+  [(ngModel)]="selectedItems"
+  (onSelect)="onItemSelect($event)"
+>
+</ng-multiselect-dropdown>
