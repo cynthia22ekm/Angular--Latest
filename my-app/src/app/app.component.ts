@@ -17,4 +17,8 @@ export class AppComponent {
   getInputText(inputText: string) {
     console.log(inputText);
   }
+
+  getSelectedText(selectedText: string) {
+    console.log(selectedText);
+  }
 }

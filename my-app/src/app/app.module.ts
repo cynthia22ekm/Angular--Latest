@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextInputComponent } from './text-input/text-input.component';
 import { FormsModule } from '@angular/forms';
+import { DropdownSingleselectComponent } from './dropdown-singleselect/dropdown-singleselect.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     ButtonComponent,
     IconComponent,
     TextInputComponent,
+    DropdownSingleselectComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
