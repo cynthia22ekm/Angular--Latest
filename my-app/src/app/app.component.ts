@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,24 @@ export class AppComponent {
 
   constructor() {}
 
+  Products = [
+    {
+      name: 'Banana',
+      quantity: 10,
+      price: 30,
+    },
+    {
+      name: 'Apple',
+      quantity: 15,
+      price: 20,
+    },
+    {
+      name: 'Pinneapple',
+      quantity: 20,
+      price: 40,
+    },
+  ];
+
   btnClickHanlder() {
     console.log('Button clicked');
   }
@@ -19,6 +37,10 @@ export class AppComponent {
   }
 
   getSelectedText(selectedText: string) {
+    console.log(selectedText);
+  }
+
+  getSelectedDropText(selectedText: string) {
     console.log(selectedText);
   }
 }

@@ -11,6 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextInputComponent } from './text-input/text-input.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownSingleselectComponent } from './dropdown-singleselect/dropdown-singleselect.component';
+import { DropdownMultiselectComponent } from './dropdown-multiselect/dropdown-multiselect.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownItemComponent } from './dropdown-item/dropdown-item.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,9 @@ import { DropdownSingleselectComponent } from './dropdown-singleselect/dropdown-
     IconComponent,
     TextInputComponent,
     DropdownSingleselectComponent,
+    DropdownMultiselectComponent,
+    DropdownComponent,
+    DropdownItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,7 @@ import { DropdownSingleselectComponent } from './dropdown-singleselect/dropdown-
     HttpClientModule,
     FormsModule,
     NgSelectModule,
+    NgMultiSelectDropDownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -27,3 +27,10 @@
 <app-dropdown-singleselect
   (dropDownSelectEmitter)="getSelectedText($event)"
 ></app-dropdown-singleselect>
+<app-dropdown-multiselect></app-dropdown-multiselect>
+
+<app-dropdown
+  drodownText="Products"
+  (getDropDownTextEmitter)="getSelectedDropText($event)"
+>
+</app-dropdown>
