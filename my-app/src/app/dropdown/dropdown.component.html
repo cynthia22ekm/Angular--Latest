@@ -1,0 +1,17 @@
+<div class="dropdown">
+  <app-button
+    btnType="primary"
+    btnSize="small"
+    [btnText]="drodownText"
+    btnWidth="150px"
+    btnHeight="30px"
+    [isIconPresent]="true"
+    iconLabel="down-arrow"
+    (buttonClickEmitter)="btnClickHanlder()"
+  ></app-button>
+  <div *ngIf="openPopup" class="dropdown-container">
+    <div *ngFor="let Product of Products">
+      <app-dropdown-item itemName="{{ Product.name }}"></app-dropdown-item>
+    </div>
+  </div>
+</div>

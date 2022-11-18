@@ -1,0 +1,17 @@
+dropdown {
+  position: relative;
+}
+
+.dropdown-container {
+  position: absolute;
+  background-color: lightgray;
+  left: 5px;
+  width: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+
