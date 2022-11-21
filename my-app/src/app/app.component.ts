@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   show: boolean = true;
+  setPopup: boolean = false;
+  drodownText: string = 'Products';
 
   constructor() {}
 
@@ -41,6 +43,11 @@ export class AppComponent {
   }
 
   getSelectedDropText(selectedText: string) {
-    console.log(selectedText);
+    this.drodownText = selectedText;
+    this.setPopup = false;
+  }
+
+  opencloseDropDown() {
+    this.setPopup = true;
   }
 }

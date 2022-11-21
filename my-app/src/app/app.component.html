@@ -30,7 +30,14 @@
 <app-dropdown-multiselect></app-dropdown-multiselect>
 
 <app-dropdown
-  drodownText="Products"
-  (getDropDownTextEmitter)="getSelectedDropText($event)"
+  [openPopup]="setPopup"
+  [drodownText]="drodownText"
+  (dropDownBtnClickEmiter)="opencloseDropDown()"
 >
+  <div *ngFor="let Product of Products">
+    <app-dropdown-item
+      itemName="{{ Product.name }}"
+      (getDropDownTextEmitter)="getSelectedDropText($event)"
+    ></app-dropdown-item>
+  </div>
 </app-dropdown>
