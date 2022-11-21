@@ -10,8 +10,6 @@
     (buttonClickEmitter)="btnClickHanlder()"
   ></app-button>
   <div *ngIf="openPopup" class="dropdown-container">
-    <div *ngFor="let Product of Products">
-      <app-dropdown-item itemName="{{ Product.name }}"></app-dropdown-item>
-    </div>
+    <ng-content></ng-content>
   </div>
 </div>

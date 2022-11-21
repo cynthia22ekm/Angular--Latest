@@ -9,45 +9,15 @@ export type DropdownComponentProps = {
   styleUrls: ['./dropdown.component.css'],
 })
 export class DropdownComponent implements OnInit, DropdownComponentProps {
-  openPopup: boolean = false;
-  @Input() drodownText: string = ';';
-  @Input() Items: [{ name: string; quantity: number; price: number }] = [
-    { name: '', quantity: 0, price: 0 },
-  ];
-  @Output() getDropDownTextEmitter = new EventEmitter<string>();
-
-  Products = [
-    {
-      name: 'Banana',
-      quantity: 10,
-      price: 30,
-    },
-    {
-      name: 'Apple',
-      quantity: 15,
-      price: 20,
-    },
-    {
-      name: 'Pinneapple',
-      quantity: 20,
-      price: 40,
-    },
-  ];
+  @Input() openPopup: boolean = false;
+  @Input() drodownText: string = '';
+  @Output() dropDownBtnClickEmiter = new EventEmitter();
 
   btnClickHanlder() {
-    this.openPopup = true;
+    this.dropDownBtnClickEmiter.emit();
   }
 
-  clickDropDownItemHandler(event: Event) {
-    this.drodownText = (<HTMLDivElement>event.target).innerText;
-    this.openPopup = false;
-    this.getDropDownTextEmitter.emit((<HTMLDivElement>event.target).innerText);
-  }
-  constructor() {
-    console.log(this.Items);
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.Items);
-  }
+  ngOnInit(): void {}
 }
