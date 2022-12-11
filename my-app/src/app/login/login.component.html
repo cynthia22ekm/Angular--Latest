@@ -1,0 +1,18 @@
+<div class="formborder">
+  <form (ngSubmit)="submit()">
+    <app-text-input
+      fieldLabel="Username"
+      textWidth="200px"
+      textHeight="30px"
+      iconLabel="cross"
+      (textInputEmitter)="getInputText($event)"
+    ></app-text-input>
+    <app-text-input
+      fieldLabel="Password"
+      textWidth="200px"
+      textHeight="30px"
+      iconLabel="cross"
+      (textInputEmitter)="getInputText($event)"
+    ></app-text-input>
+  </form>
+</div>
