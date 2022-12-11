@@ -1,0 +1,25 @@
+div {
+  position: relative;
+  width: max-content;
+}
+
+app-icon {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+
+.label {
+  padding: 5px;
+}
+
+#textInput {
+  border-radius: 5px;
+}
+
+.textInputHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+}
