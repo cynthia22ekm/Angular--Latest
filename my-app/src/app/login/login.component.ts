@@ -15,16 +15,8 @@ export class LoginComponent implements OnInit {
   });
   constructor(private loginService: LoginService) {}
 
-  getInputUsername(inputUsername: String) {
-    console.log('Get input text', inputUsername);
-  }
-
-  getInputPassword(inputPassword: String) {
-    console.log('Password is', inputPassword);
-  }
-
-  submit(data: any) {
-    this.loginService.onLoginSubmit(data);
+  submit() {
+    this.loginService.onLoginSubmit(this.loginForm.value);
   }
 
   ngOnInit(): void {}

@@ -1,23 +1,7 @@
 <div class="formborder">
-  <form [formGroup]="loginForm" (ngSubmit)="submit(loginForm.value)">
-    <app-text-input
-      formControlName="email"
-      fieldLabel="Username"
-      textWidth="200px"
-      textHeight="30px"
-      iconLabel="cross"
-      (textInputEmitter)="getInputUsername($event)"
-      ngModel
-    ></app-text-input>
-    <app-text-input
-      formControlName="password"
-      fieldLabel="Password"
-      textWidth="200px"
-      textHeight="30px"
-      iconLabel="cross"
-      (textInputEmitter)="getInputPassword($event)"
-      ngModel
-    ></app-text-input>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <input formControlName="email" type="text" />
+    <input formControlName="password" type="text" />
     <app-button
       btnType="submit"
       btnSize="small"
