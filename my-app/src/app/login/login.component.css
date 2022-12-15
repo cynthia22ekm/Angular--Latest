@@ -1,3 +1,85 @@
-app-text-input {
-  margin: 10px;
+.username,
+.password {
+  margin-left: 110px;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialnet {
+  display: flex;
+  width: 50px;
+  align-items: center;
+  margin-left: 215px;
+}
+
+.facebook {
+  background-color: gray;
+  border-radius: 50%;
+  width: 90px;
+  margin: 5px;
+  height: 30px;
+}
+.google {
+  background-color: orangered;
+  border-radius: 50%;
+  width: 40px;
+  margin: 5px;
+}
+.linkedin {
+  background-color: gray;
+  border-radius: 50%;
+  width: 40px;
+  margin: 5px;
+}
+
+.formborder {
+  width: 600px;
+  height: 400px;
+  margin: 0px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.maintitle {
+  margin-left: 110px;
+  margin-top: 30px;
+  font-size: 35px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.subtitle {
+  margin-top: 30px;
+  margin-left: 190px;
+  font-size: small;
+}
+
+.submit {
+  margin-left: 190px;
+  border-radius: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: small;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  background-color: rgb(16, 171, 171);
+  border: none;
+  margin-top: 20px;
+}
+
+form {
+  padding: 10px;
+}
+
+input {
+  border-radius: 10px;
+  background-color: lightgray;
+  font-size: small;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+  width: 300px;
+  height: 35px;
+  padding: 10px;
+  box-sizing: border-box;
 }

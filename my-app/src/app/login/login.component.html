@@ -1,13 +1,22 @@
 <div class="formborder">
+  <div class="maintitle">Login to Your Account</div>
+  <div class="subtitle">Login using social networks</div>
+  <div class="socialnet">
+    <button class="facebook">f</button>
+    <button class="google">G+</button>
+    <button class="linkedin">in</button>
+  </div>
   <form [formGroup]="loginForm" (ngSubmit)="submit()">
-    <input formControlName="email" type="text" />
-    <input formControlName="password" type="text" />
-    <app-button
-      btnType="submit"
-      btnSize="small"
-      btnText="Submit"
-      btnWidth="100px"
-      btnHeight="30px"
-    ></app-button>
+    <div class="username">
+      <input formControlName="email" type="text" placeholder="Email" />
+    </div>
+    <div class="password">
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Password"
+      />
+    </div>
+    <button class="submit" type="submit">Sign In</button>
   </form>
 </div>
