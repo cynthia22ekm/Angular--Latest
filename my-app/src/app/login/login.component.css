@@ -17,21 +17,29 @@
 .facebook {
   background-color: gray;
   border-radius: 50%;
-  width: 90px;
+  width: 700px;
   margin: 5px;
   height: 30px;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .google {
   background-color: orangered;
   border-radius: 50%;
-  width: 40px;
+  width: 700px;
   margin: 5px;
+  height: 30px;
+  text-align: center;
+  font-size: small;
 }
 .linkedin {
   background-color: gray;
   border-radius: 50%;
-  width: 40px;
+  width: 700px;
   margin: 5px;
+  height: 30px;
+  text-align: center;
 }
 
 .formborder {
