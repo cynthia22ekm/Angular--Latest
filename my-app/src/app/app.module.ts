@@ -9,14 +9,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextInputComponent } from './components/text-input/text-input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownSingleselectComponent } from './components/dropdown-singleselect/dropdown-singleselect.component';
 import { DropdownMultiselectComponent } from './components/dropdown-multiselect/dropdown-multiselect.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownItemComponent } from './components/dropdown-item/dropdown-item.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductsComponent } from './products/products.component';
+import { StoreComponent } from './store/store.component';
+import { HomeComponent } from './home/home.component';
 
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'store', component: StoreComponent },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +38,9 @@ import { LoginComponent } from './login/login.component';
     DropdownComponent,
     DropdownItemComponent,
     LoginComponent,
+    ProductsComponent,
+    StoreComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,8 +49,10 @@ import { LoginComponent } from './login/login.component';
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgSelectModule,
     NgMultiSelectDropDownModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],
