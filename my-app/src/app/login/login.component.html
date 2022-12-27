@@ -8,15 +8,24 @@
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="submit()">
     <div class="username">
-      <input formControlName="username" type="text" placeholder="User Name" />
+      <input
+        formControlName="username"
+        type="text"
+        placeholder="User Name"
+        (change)="enterUsername()"
+      />
     </div>
+    <p *ngIf="emptyUsername">Please enter your username</p>
     <div class="password">
       <input
         formControlName="password"
         type="password"
         placeholder="Password"
+        (change)="enterPassword()"
       />
     </div>
+    <p *ngIf="emptyPassword">Please enter your password</p>
+    <p *ngIf="invalidLogin">Please check your credentials and try again !</p>
     <button class="submit" type="submit">Sign In</button>
   </form>
 </div>

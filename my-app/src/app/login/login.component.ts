@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,18 +21,37 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
   loginstatus: Boolean = false;
+  invalidLogin: Boolean = false;
+  emptyUsername: Boolean = false;
+  emptyPassword: Boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
+  enterUsername() {
+    if (this.loginForm.value.username?.length != 0) this.emptyUsername = false;
+  }
+
+  enterPassword() {
+    if (this.loginForm.value.password?.length != 0) this.emptyPassword = false;
+  }
+
   submit() {
+    if (this.loginForm.value.username?.length == 0) this.emptyUsername = true;
+    if (this.loginForm.value.password?.length == 0) this.emptyPassword = true;
+
     this.loginService.onLoginSubmit(this.loginForm.value).subscribe({
       next: (data: Object) => {
         this.loginstatus = JSON.stringify(data).includes('true');
         if (this.loginstatus) this.router.navigate(['/home']);
       },
       error: (error) => {
-        if (error.status != 200) {
+        if (
+          error.status != 200 &&
+          this.emptyUsername == false &&
+          this.emptyPassword == false
+        ) {
           this.loginstatus = false;
+          this.invalidLogin = true;
         }
       },
     });
