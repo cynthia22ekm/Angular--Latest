@@ -1,7 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { catchError } from 'rxjs';
 
 //https://www.javainuse.com/spring/ang7-basic-interceptor
 @Injectable({ providedIn: 'root' })
@@ -13,7 +11,6 @@ export class LoginService {
   onLoginSubmit(data: any) {
     var encodedAuth = window.btoa(data.username + ':' + data.password);
 
-    console.log('Encoded value is', encodedAuth);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -22,7 +19,7 @@ export class LoginService {
     };
 
     const body = JSON.stringify(data);
-    console.log(httpOptions.headers);
+
     return this.http.post(this.baseURL + 'User/Login', body, httpOptions);
   }
 }
