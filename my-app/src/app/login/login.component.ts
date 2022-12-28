@@ -34,8 +34,12 @@ export class LoginComponent implements OnInit {
   enterPassword() {
     if (this.loginForm.value.password?.length != 0) this.emptyPassword = false;
   }
+  navigateToSignUp() {
+    this.router.navigate(['/signup']);
+  }
 
   submit() {
+    this.invalidLogin = false;
     if (this.loginForm.value.username?.length == 0) this.emptyUsername = true;
     if (this.loginForm.value.password?.length == 0) this.emptyPassword = true;
 
