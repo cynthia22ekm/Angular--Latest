@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { SignUpService } from '../signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,11 +19,19 @@ export class SignupComponent implements OnInit {
     confirmpassword: new FormControl(''),
   });
 
-  constructor() {}
+  signUpMessage: String = '';
+
+  constructor(private signUpService: SignUpService) {}
 
   ngOnInit(): void {}
 
-  submit() {}
+  submit() {
+    this.signUpService.onSignUp(this.signupForm.value).subscribe({
+      next: (data: Object) => (this.signUpMessage = data.toString()),
+    });
+
+    console.log('Sign Up Messsage is ', this.signUpMessage);
+  }
 
   enterUserId() {}
 

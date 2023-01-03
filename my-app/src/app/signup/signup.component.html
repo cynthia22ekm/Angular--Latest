@@ -4,15 +4,6 @@
     <form [formGroup]="signupForm" (ngSubmit)="submit()">
       <div class="input">
         <input
-          formControlName="userid"
-          type="text"
-          placeholder="User ID"
-          (change)="enterUserId()"
-        />
-      </div>
-
-      <div class="input">
-        <input
           formControlName="firstname"
           type="text"
           placeholder="First Name"
