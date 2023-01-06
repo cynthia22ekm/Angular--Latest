@@ -13,10 +13,12 @@ export class forgotpasswordService {
         'Content-Type': 'application/json',
       }),
     };
-
+    console.log('Data is ' + data);
+    const body = JSON.stringify({ email: data });
+    console.log('Body is ' + body);
     return this.http.post(
-      this.baseURL + 'token/CreateToken/' + data,
-      null,
+      this.baseURL + 'Forgot-Password/CreateToken',
+      body,
       httpOptions
     );
   }
