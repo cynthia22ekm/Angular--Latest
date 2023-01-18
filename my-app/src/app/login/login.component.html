@@ -31,6 +31,12 @@
     <p *ngIf="invalidLogin">Please check your credentials and try again !</p>
     <button class="submit" type="submit">Sign In</button>
   </form>
-  <div class="question">Dont have an account yet?</div>
-  <a id="create-account" (click)="navigateToSignUp()">Create account</a>
+  <div id="login-footer">
+    <a class="create-account" (click)="navigateToSignUp()"
+      >Dont have an account yet?</a
+    >
+    <a class="forgot-password" (click)="navigateToForgotPassword()"
+      >Forgot Password?</a
+    >
+  </div>
 </div>
