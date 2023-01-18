@@ -9,7 +9,6 @@ import { SignUpService } from '../signup.service';
 })
 export class SignupComponent implements OnInit {
   signupForm = new FormGroup({
-    userid: new FormControl(''),
     firstname: new FormControl(''),
     lastname: new FormControl(''),
     email: new FormControl(''),
