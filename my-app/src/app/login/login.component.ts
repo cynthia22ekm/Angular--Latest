@@ -38,6 +38,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/signup']);
   }
 
+  navigateToForgotPassword() {
+    this.router.navigate(['/forgot-password']);
+  }
+
   submit() {
     this.invalidLogin = false;
     if (this.loginForm.value.username?.length == 0) this.emptyUsername = true;
