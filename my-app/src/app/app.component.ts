@@ -1,34 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { LoginService } from './login.service';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [ProductsService],
 })
 export class AppComponent {
   show: boolean = true;
   setPopup: boolean = false;
-  drodownText: string = 'Products';
+  drodownText: string = '';
+  Products: { name: string; quantity: number; price: number }[] = [];
 
-  constructor() {}
-
-  Products = [
-    {
-      name: 'Banana',
-      quantity: 10,
-      price: 30,
-    },
-    {
-      name: 'Apple',
-      quantity: 15,
-      price: 20,
-    },
-    {
-      name: 'Pinneapple',
-      quantity: 20,
-      price: 40,
-    },
-  ];
+  constructor(private productsService: ProductsService) {}
+  ngOnInit() {
+    this.Products = this.productsService.Products;
+  }
 
   btnClickHanlder() {
     console.log('Button clicked');
@@ -47,7 +36,5 @@ export class AppComponent {
     this.setPopup = false;
   }
 
-  opencloseDropDown() {
-    this.setPopup = true;
-  }
+  opencloseDropDown() {}
 }
