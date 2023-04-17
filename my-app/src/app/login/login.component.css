@@ -110,13 +110,21 @@ p {
   color: red;
 }
 
-.question {
-  margin-left: 30%;
-  font-size: medium;
-  padding: 10px;
+#login-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  margin-left: 110px;
+  margin-top: 5px;
 }
-#create-account {
-  margin-left: 39%;
+.create-account {
+  color: blue;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgot-password {
   color: blue;
   font-weight: bold;
   cursor: pointer;
