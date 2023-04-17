@@ -1,5 +1,5 @@
 /*https://stackoverflow.com/questions/46835672/absolute-position-div-goes-out-of-window-when-opening-console*/
-#signup-backgroud {
+/* #signup-backgroud {
   background-color: blueviolet;
   width: 100%;
   height: 100vh;
@@ -15,6 +15,31 @@
   top: 5%;
   left: 30%;
   border-radius: 10px;
+} */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#signup-backgroud {
+  background-color: blueviolet;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 5%;
+}
+
+#signup-form {
+  background-color: white;
+  width: 90%;
+  max-height: 80%;
+  overflow: auto;
+  z-index: 2;
+  position: absolute;
+  border-radius: 10px;
+  padding: 1em 0;
 }
 
 input {
