@@ -20,6 +20,7 @@ export class DropdownComponent implements OnInit, DropdownComponentProps {
   @Input() openPopup: boolean = false;
   @Input() drodownText: string = '';
   @Output() dropDownBtnClickEmiter = new EventEmitter();
+  
 
   btnClickHanlder() {
     this.dropDownBtnClickEmiter.emit();
