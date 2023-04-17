@@ -1,4 +1,4 @@
-<app-button
+<!-- <app-button
   btnType="primary"
   btnSize="small"
   btnText="Save"
@@ -19,6 +19,7 @@
   (buttonClickEmitter)="btnClickHanlder()"
 ></app-button>
 <app-text-input
+  fieldLabel="Sample"
   textWidth="200px"
   textHeight="30px"
   iconLabel="cross"
@@ -40,4 +41,5 @@
       (getDropDownTextEmitter)="getSelectedDropText($event)"
     ></app-dropdown-item>
   </div>
-</app-dropdown>
+</app-dropdown> -->
+<router-outlet></router-outlet>
