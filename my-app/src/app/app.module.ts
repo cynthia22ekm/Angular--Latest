@@ -20,12 +20,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { StoreComponent } from './store/store.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'store', component: StoreComponent },
+  { path: 'forgot-password', component: ForgotpasswordComponent },
+  { path: 'reset-password', component: ResetpasswordComponent },
 ];
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ const appRoutes: Routes = [
     ProductsComponent,
     StoreComponent,
     HomeComponent,
+    SignupComponent,
+    ForgotpasswordComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
