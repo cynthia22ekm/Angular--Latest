@@ -41,6 +41,8 @@ export class SignupComponent implements OnInit {
   enterEmail() {}
 
   enterPhone() {}
+  
+  enterAddress() {}
 
   enterUserName() {}
 
