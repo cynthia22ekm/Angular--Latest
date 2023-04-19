@@ -1,0 +1,42 @@
+<div class="navbar">
+  <a class="signup" (click)="navigateToSignUp()">SignUp</a>
+</div>
+<div class="formborder">
+  <div class="maintitle">Login to Your Account</div>
+  <div class="subtitle">Login using social networks</div>
+  <div class="socialnet">
+    <button class="facebook">f</button>
+    <button class="google">G+</button>
+    <button class="linkedin">in</button>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div class="username">
+      <input
+        formControlName="username"
+        type="text"
+        placeholder="User Name"
+        (change)="enterUsername()"
+      />
+    </div>
+    <p *ngIf="emptyUsername">Please enter your username</p>
+    <div class="password">
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Password"
+        (change)="enterPassword()"
+      />
+    </div>
+    <p *ngIf="emptyPassword">Please enter your password</p>
+    <p *ngIf="invalidLogin">Please check your credentials and try again !</p>
+    <button class="submit" type="submit">Sign In</button>
+  </form>
+  <div id="login-footer">
+    <a class="create-account" (click)="navigateToSignUp()"
+      >Dont have an account yet?</a
+    >
+    <a class="forgot-password" (click)="navigateToForgotPassword()"
+      >Forgot Password?</a
+    >
+  </div>
+</div>
