@@ -15,14 +15,14 @@ import { DropdownMultiselectComponent } from './components/dropdown-multiselect/
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownItemComponent } from './components/dropdown-item/dropdown-item.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { StoreComponent } from './store/store.component';
 import { HomeComponent } from './home/home.component';
-import { SignupComponent } from './signup/signup.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './pages/resetpassword/resetpassword.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
