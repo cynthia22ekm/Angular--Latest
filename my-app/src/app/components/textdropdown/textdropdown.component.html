@@ -1,0 +1,24 @@
+<input
+  type="text"
+  value=""
+  class="pl-3 text-black border-[ #D3E1E3] border-2"
+  (input)="displayInputText($event)"
+/>
+<img
+  src="../../../../assets/img/icons/icon-arrow-down.svg"
+  class="absolute right-4 top-4"
+  (click)="toggleDropDwn($event)"
+/>
+<div
+  style="visibility: hidden"
+  class="w-full bg-slate-400"
+  id="dropDownContainer"
+>
+  <div
+    *ngFor="let parameter of parameters"
+    class="p-5 my-[10px] text-black bg-slate-200 hover:bg-slate-100"
+    (click)="selectMappingParameter($event)"
+  >
+    {{ parameter }}
+  </div>
+</div>
