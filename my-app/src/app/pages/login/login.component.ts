@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../login.service';
 import { ItemCountService } from 'src/app/datastore/itemcount';
+import { Subscription } from 'rxjs';
 
 //https://stackoverflow.com/questions/14627399/setting-authorization-header-of-httpclient
 //Create a login form
@@ -14,9 +15,10 @@ import { ItemCountService } from 'src/app/datastore/itemcount';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [LoginService],
+  providers: [LoginService, ItemCountService],
 })
 export class LoginComponent implements OnInit {
+  subscription: Subscription | undefined;
   loginForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
@@ -71,10 +73,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.itemCountService
+    this.subscription = this.itemCountService
       .getItemCount()
       .subscribe((count) =>
         console.log('The count value is ' + count.itemCount)
       );
+  }
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
