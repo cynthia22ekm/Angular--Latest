@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../login.service';
+import { ItemCountService } from 'src/app/datastore/itemcount';
 
 //https://stackoverflow.com/questions/14627399/setting-authorization-header-of-httpclient
 //Create a login form
@@ -25,7 +26,11 @@ export class LoginComponent implements OnInit {
   emptyUsername: Boolean = false;
   emptyPassword: Boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private itemCountService: ItemCountService
+  ) {}
 
   enterUsername() {
     if (this.loginForm.value.username?.length != 0) this.emptyUsername = false;
@@ -65,5 +70,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.itemCountService
+      .getItemCount()
+      .subscribe((count) =>
+        console.log('The count value is ' + count.itemCount)
+      );
+  }
 }
